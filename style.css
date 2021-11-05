@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.calculator {
+    width: 30rem;
+    height: 32rem;
+    background: gray;
+    margin: 5rem auto;
+}
+
+.display-container {
+    width: 96%;
+    height: 5rem;
+    background: blue;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.display {
+    width: 100%;
+    height: 100%;
+}
+
+.display:hover {
+    cursor:default;
+}
+
+.buttons-container {
+    width: 100%;
+    height: 100%;
+    background: greenyellow;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.numbers-section {
+    width: 80%;
+    height: 100%;
+    background:indianred;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+}
+
+.numbers-section .btn {
+    background:greenyellow;
+    width: 5rem;
+    height: 5rem;
+}
+
+.operations-section {
+    width: 20%;
+    height: 100%;
+    background: indianred;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.operations-section .btn {
+    width: 100%;
+}
