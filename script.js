@@ -41,11 +41,14 @@ function appendNumber(num) {
     }
     currentNumber += num;
     displayScreen.value = currentNumber;
-    console.log(currentNumber.length);
 }
 
 function operate(num1, num2, op) {
     if (num1 !== undefined && num2 !== undefined) {
+        let roundToLength;
+        (num1.toString().length > num2.toString().length) ?
+        roundToLength = num1.toString().length : roundToLength = num2.toString().length;
+        roundToLength = Math.pow(10, roundToLength);
         switch(op) {
         case "+":
             numbers[0] += numbers[1];
@@ -67,6 +70,7 @@ function operate(num1, num2, op) {
         default:
             alert("Something is wrong!");
         }
+        numbers[0] = Math.round((numbers[0] + Number.EPSILON) * roundToLength) /  roundToLength;
     }
 }
 /* 
