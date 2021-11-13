@@ -1,19 +1,16 @@
 const numberButtons = document.querySelectorAll("[data-number]");
 const operationButtons = document.querySelectorAll("[data-operation]");
 let displayScreen = document.querySelector("[data-current-output]");
-const regex = /[1-9]+/g;
 let currentNumber = "";
 let operand = [];
 let numbers = [];
 
 numberButtons.forEach(button => button.addEventListener("click", () => {
     appendNumber(button.innerText);
-    displayScreen.value = currentNumber;
 }));
 
 operationButtons.forEach(button => button.addEventListener("click", () => {
     storeNumber(currentNumber);
-    console.log(button.innerText);
     operate(numbers[0], numbers[1], button.innerText);
     displayScreen.value = numbers[0];
 }));
@@ -32,15 +29,22 @@ function appendNumber(num) {
     if(num === "." && currentNumber.includes(".")){
         return;
     }
-    if (currentNumber[0] === "0" && currentNumber.includes()) {
+    if (num === "0" && currentNumber.length === 0) {
+        console.log("block");
+        displayScreen.value = "0";
+        return;
+    }
+    if (num === "." && currentNumber.length === 0) {
+        currentNumber += "0.";
+        displayScreen.value = currentNumber;
         return;
     }
     currentNumber += num;
-    console.log(currentNumber.match(regex));
+    displayScreen.value = currentNumber;
+    console.log(currentNumber.length);
 }
 
 function operate(num1, num2, op) {
-    console.log("NUM1:" + num1 + ", NUM2:" + num2);
     if (num1 !== undefined && num2 !== undefined) {
         switch(op) {
         case "+":

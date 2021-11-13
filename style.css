@@ -67,15 +67,15 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     grid-column: 1 / -1;
-    align-items: flex-end;
+    align-items: center;
     background:rgb(164, 224, 214);
     border-radius: 5px 5px 0 0;
     border: 1px solid white;
     width: 100%;
 }
 
-.previous-output {
-    font-size: 1.5rem;
+.calculator-label {
+    font-size: 1.2rem;
     padding: 10px;
 }
 
