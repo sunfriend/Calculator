@@ -43,6 +43,11 @@ body {
     cursor: pointer;
 }
 
+.calculator button:active {
+    background:rgb(164, 224, 214);
+    transition: 200ms;
+}
+
 .calculator .all-clear {
     background:rgb(230, 154, 41);
 }

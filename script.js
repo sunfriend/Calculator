@@ -78,14 +78,13 @@ function appendNumber(num) {
     if(num === "." && currentNumber.includes(".")){
         return;
     }
-    if (num === "0" && currentNumber.length === 1) {
-        currentNumber = "0";
-        displayScreen.value = "0";
-        return;
-    }
     if (num === "." && currentNumber.length === 0) {
         currentNumber += "0.";
         displayScreen.value = currentNumber;
+        return;
+    }
+    if (num === "0" && currentNumber.length === 0) {
+        displayScreen.value = "0";
         return;
     }
     currentNumber += num;
